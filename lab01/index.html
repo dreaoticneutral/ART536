@@ -9,6 +9,9 @@
 </head>
 
 <body>
+    
+
+   <a-scene background="color: #FAFAFA">
     <a-assets>
         <img id="wood_diff" src="assets/oak_veneer_01_2k/textures/oak_veneer_01_diff_2k.png" alt="">
         <img id="wood_rough" src="assets/oak_veneer_01_2k/textures/oak_veneer_01_rough_2k.png">
@@ -25,10 +28,8 @@
         <img id="rug_rough" src="assets/dirty_carpet_2k/textures/dirty_carpet_rough_2k.png" alt="">
         <img id="rug_normal" src="assets/dirty_carpet_2k/textures/dirty_carpet_nor_gl_2k.png" alt="">
         <img id="rug_ao" src="assets/dirty_carpet_2k/textures/dirty_carpet_ao_2k.png" alt="">
-
     </a-assets>
-
-   <a-scene background="color: #FAFAFA">
+    
     <a-plane position="0 2.15 -1.7" rotation="0 0 0" width="2.7" height="4.3" color="#f7f0e7" shadow="cast: true; receive: true" material="src: #brick_diff; roughnessMap: #brick_rough; normalMap: #brick_normal; aoMap: #wall_ao"></a-plane>
     <a-plane position="1.35 2.15 0" rotation="0 -90 0" width="3.4" height="4.3" color="#f7f0e7" shadow="cast: true; receive: true" material="src: #wall_diff; roughnessMap: #wall_rough; normalMap: #wall_normal; aoMap: #wall_ao"></a-plane>
     <a-plane position="-1.35 2.15 0" rotation="0 90 0" width="3.4" height="4.3" color="#f7f0e7" shadow="cast: true; receive: true" material="src: #wall_diff; roughnessMap: #wall_rough; normalMap: #wall_normal; aoMap: #wall_ao"></a-plane>
