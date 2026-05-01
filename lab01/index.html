@@ -13,21 +13,21 @@
 
    <a-scene background="color: #FAFAFA">
     <a-assets>
-        <img id="wood_diff" src="assets/oak_veneer_01_2k/textures/oak_veneer_01_diff_2k.png" alt="">
-        <img id="wood_rough" src="assets/oak_veneer_01_2k/textures/oak_veneer_01_rough_2k.png">
-        <img id="wood_normal" src="assets/oak_veneer_01_2k/textures/oak_veneer_01_nor_gl_2k.png" alt="">
-        <img id="wood_ao" src="assets/oak_veneer_01_2k/textures/oak_veneer_01_ao_2k.png" alt="">
-        <img id="wall_diff" src="assets/painted_plaster_wall_2k/textures/painted_plaster_wall_ao_2k.png" alt="">
-        <img id="wall_rough" src="assets/painted_plaster_wall_2k/textures/painted_plaster_wall_rough_2k.png" alt="">
-        <img id="wall_normal" src="assets/painted_plaster_wall_2k/textures/painted_plaster_wall_nor_gl_2k.png" alt="">
-        <img id="wall_ao" src="assets/painted_plaster_wall_2k/textures/painted_plaster_wall_ao_2k.png" alt="">
-        <img id="brick_diff" src="assets/pavement_06_2k/textures/pavement_06_ao_2k.png" alt="">
-        <img id="brick_rough" src="assets/pavement_06_2k/textures/pavement_06_rough_2k.png" alt="">
-        <img id="brick_normal" src="assets/pavement_06_2k/textures/pavement_06_nor_gl_2k.png" alt="">
-        <img id="brick_ao" src="assets/pavement_06_2k/textures/pavement_06_ao_2k.png" alt="">
-        <img id="rug_rough" src="assets/dirty_carpet_2k/textures/dirty_carpet_rough_2k.png" alt="">
-        <img id="rug_normal" src="assets/dirty_carpet_2k/textures/dirty_carpet_nor_gl_2k.png" alt="">
-        <img id="rug_ao" src="assets/dirty_carpet_2k/textures/dirty_carpet_ao_2k.png" alt="">
+        <img id="wood_diff" src="/assets/oak_veneer_01_2k/textures/oak_veneer_01_diff_2k.png" alt="">
+        <img id="wood_rough" src="/assets/oak_veneer_01_2k/textures/oak_veneer_01_rough_2k.png">
+        <img id="wood_normal" src="/assets/oak_veneer_01_2k/textures/oak_veneer_01_nor_gl_2k.png" alt="">
+        <img id="wood_ao" src="/assets/oak_veneer_01_2k/textures/oak_veneer_01_ao_2k.png" alt="">
+        <img id="wall_diff" src="/assets/painted_plaster_wall_2k/textures/painted_plaster_wall_ao_2k.png" alt="">
+        <img id="wall_rough" src="/assets/painted_plaster_wall_2k/textures/painted_plaster_wall_rough_2k.png" alt="">
+        <img id="wall_normal" src="/assets/painted_plaster_wall_2k/textures/painted_plaster_wall_nor_gl_2k.png" alt="">
+        <img id="wall_ao" src="/assets/painted_plaster_wall_2k/textures/painted_plaster_wall_ao_2k.png" alt="">
+        <img id="brick_diff" src="/assets/pavement_06_2k/textures/pavement_06_ao_2k.png" alt="">
+        <img id="brick_rough" src="/assets/pavement_06_2k/textures/pavement_06_rough_2k.png" alt="">
+        <img id="brick_normal" src="/assets/pavement_06_2k/textures/pavement_06_nor_gl_2k.png" alt="">
+        <img id="brick_ao" src="/assets/pavement_06_2k/textures/pavement_06_ao_2k.png" alt="">
+        <img id="rug_rough" src="/assets/dirty_carpet_2k/textures/dirty_carpet_rough_2k.png" alt="">
+        <img id="rug_normal" src="/assets/dirty_carpet_2k/textures/dirty_carpet_nor_gl_2k.png" alt="">
+        <img id="rug_ao" src="/assets/dirty_carpet_2k/textures/dirty_carpet_ao_2k.png" alt="">
     </a-assets>
 
     <a-plane position="0 2.15 -1.7" rotation="0 0 0" width="2.7" height="4.3" color="#f7f0e7" shadow="cast: true; receive: true" material="src: #brick_diff; roughnessMap: #brick_rough; normalMap: #brick_normal; aoMap: #wall_ao"></a-plane>
@@ -89,7 +89,43 @@
     <a-light color="#333" light="angle: 90; decay: 0.44; distance: 5.03; intensity: 2.54; penumbra: 1; type: spot; castShadow: true" position="1.09316 1.24974 -1.05323" rotation="-39.547 90.00021045914971 -90.00021045914971"></a-light>    
     <a-light color="#333" light="angle: 90; decay: 0.44; distance: 5.03; intensity: 0.82; penumbra: 1; castShadow: true; shadowCameraFar: 500.05; shadowCameraFov: 90.01; shadowCameraTop: 1.48; shadowCameraRight: 1.05; shadowCameraLeft: -3.78; shadowCameraVisible: true; shadowMapHeight: 513.08" position="-0.01056 4.19086 -0.06979" rotation="-75.43734218030957 90.40643753589747 -88.21601988511233"></a-light>
 
+    <!--
+    <a-light
+  type="ambient"
+  intensity="0.35"
+  color="#FFEEDB">
+</a-light>
+
+
+<a-light
+  type="point"
+  intensity="1.2"
+  distance="8"
+  decay="2"
+  color="#FFE4C4"
+  position="0 4.1 0"
+  castShadow="true">
+</a-light>
+
+
+<a-light
+  type="point"
+  intensity="0.4"
+  distance="6"
+  decay="2"
+  color="#FFF5E6"
+  position="-1 2 1">
+</a-light>
+
+
+<a-light
+  type="directional"
+  intensity="0.25"
+  color="#FFF8EE"
+  position="2 3 1">
+</a-light>
+-->
    </a-scene>
-    
+   
 </body>
 </html>
