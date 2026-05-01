@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-extras@7.0.0/dist/aframe-extras.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/aframe-blink-controls/dist/aframe-blink-controls.min.js"></script>
+
+</head>
+<body>
+    <a-scene background="color: #FAFAFA" keyboard-shortcuts="" screenshot="" xr-mode-ui="" device-orientation-permission-ui="">
+    <a-assets>
+        <a-asset-item id="hudson-podium-obj" src="final/podiums/platformhudson.obj"></a-asset-item>
+        <a-asset-item id="hudson-podium-mtl" src="final/podiums/platformhudson.mtl"></a-asset-item>
+        <a-asset-item id="cal-podium-obj" src="final/podiums/platformcal.obj"></a-asset-item>
+        <a-asset-item id="cal-podium-mtl" src="final/podiums/platformcal.mtl"></a-asset-item>
+        <a-asset-item id="cartrip-podium-obj" src="final/podiums/platformcartrip.obj"></a-asset-item>
+        <a-asset-item id="cartrip-podium-mtl" src="final/podiums/platformcartrip.mtl"></a-asset-item>
+        <a-asset-item id="chick-podium-obj" src="final/podiums/platformchick.obj"></a-asset-item>
+        <a-asset-item id="chick-podium-mtl" src="final/podiums/platformchick.mtl"></a-asset-item>
+        <a-asset-item id="cruz-podium-obj" src="final/podiums/platformcruz.obj"></a-asset-item>
+        <a-asset-item id="cruz-podium-mtl" src="final/podiums/platformcruz.mtl"></a-asset-item>
+        <a-asset-item id="king-podium-obj" src="final/podiums/platformking.obj"></a-asset-item>
+        <a-asset-item id="king-podium-mtl" src="final/podiums/platformking.mtl"></a-asset-item>
+        <a-asset-item id="mcqueen-podium-obj" src="final/podiums/platformmcqueen.obj"></a-asset-item>
+        <a-asset-item id="mcqueen-podium-mtl" src="final/podiums/platformmcqueen.mtl"></a-asset-item>
+        <a-asset-item id="moon-podium-obj" src="final/podiums/platformmoon.obj"></a-asset-item>
+        <a-asset-item id="moon-podium-mtl" src="final/podiums/platformmoon.mtl"></a-asset-item>
+        <a-asset-item id="nash-podium-obj" src="final/podiums/platformnash.obj"></a-asset-item>
+        <a-asset-item id="nash-podium-mtl" src="final/podiums/platformnash.mtl"></a-asset-item>
+        <a-asset-item id="swift-podium-obj" src="final/podiums/platformswitf.obj"></a-asset-item>
+        <a-asset-item id="swift-podium-mtl" src="final/podiums/platformswitf.mtl"></a-asset-item>
+        <a-asset-item id="cal-wall-glb" src="final/walls/wall_cal.glb"></a-asset-item>
+        <a-asset-item id="cartrip-wall-glb" src="final/walls/wall_cartrip.glb"></a-asset-item>
+        <a-asset-item id="chick-wall-glb" src="final/walls/wall_chick.glb"></a-asset-item>
+        <a-asset-item id="cruz-wall-glb" src="final/walls/wall_cruz.glb"></a-asset-item>
+        <a-asset-item id="hud-wall-glb" src="final/walls/wall_hud.glb"></a-asset-item>
+        <a-asset-item id="king-wall-glb" src="final/walls/wall_king.glb"></a-asset-item>
+        <a-asset-item id="mcqueen-wall-glb" src="final/walls/wall_mcqueen.glb"></a-asset-item>
+        <a-asset-item id="moon-wall-glb" src="final/walls/wall_moon.glb"></a-asset-item>
+        <a-asset-item id="nash-wall-glb" src="final/walls/wall_nash.glb"></a-asset-item>
+        <a-asset-item id="swift-wall-glb" src="final/walls/wall_swift.glb"></a-asset-item>
+        <a-asset-item id="mcqueen" src="final/cars/mcqueen.glb"></a-asset-item>
+        <a-asset-item id="cal" src="final/cars/cal.glb"></a-asset-item>
+        <a-asset-item id="cartrip" src="final/cars/cartrip.glb"></a-asset-item>
+        <a-asset-item id="chick" src="final/cars/chick.glb"></a-asset-item>
+        <a-asset-item id="cruz" src="final/cars/cruz.glb"></a-asset-item>
+        <a-asset-item id="hudson" src="final/cars/hudson.glb"></a-asset-item>
+        <a-asset-item id="king" src="final/cars/king.glb"></a-asset-item>
+        <a-asset-item id="moon" src="final/cars/moon.glb"></a-asset-item>
+        <a-asset-item id="nash" src="final/cars/nash.glb"></a-asset-item>
+        <a-asset-item id="swift" src="final/cars/swift.glb"></a-asset-item>
+        <a-asset-item id="pistoncup-logo" src="final/logo/piston-cup3d.glb"></a-asset-item>
+        <a-asset-item id="pistoncup-text" src="final/logo/piston-cup-text3d.glb"></a-asset-item>
+        <a-asset-item id="halloffame-text" src="final/logo/hall-of-fame3d.glb"></a-asset-item>
+        <img id="floor_diff" src="final/textures/tiling_15_basecolor-2K.png" alt="">
+        <img id="floor_rough" src="final/textures/tiling_15_roughness-2K.png" alt="">
+        <img id="floor_normal" src="final/textures/tiling_15_normal-2K.png" alt="">
+        <img id="floor_ao" src="final/textures/tiling_15_ambientocclusion-2K.png" alt="">
+        <img id="ceiling_diff" src="final/textures/rubber_tiles_diff_2k.png" alt="">
+        <img id="ceiling_rough" src="final/textures/rubber_tiles_rough_2k.png" alt="">
+        <img id="ceiling_normal" src="final/textures/rubber_tiles_nor_gl_2k.png" alt="">
+        <img id="ceiling_ao" src="final/textures/rubber_tiles_ao_2k.png" alt="">
+        <img id="halloffame-logo" src="final/logo/pistoncuplogobase.png">
+  </a-assets>
+  <a-entity id="player" position="0 1.6 0">
+            <!-- camera -->
+            <a-entity id="camera" camera="" wasd-controls="" look-controls="" position="1.3110375249704858 0 6.429765360367798"></a-entity>
+            <!-- hand controls -->
+            <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="" blink-controls=""></a-entity>
+            <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls=""></a-entity>
+        </a-entity>
+    <a-plane class="floor" position="0 0 -4" rotation="-90 0 0" width="70" height="40" color="#53565b" shadow="" material="repeat: 50 50; src: #floor_diff; normalMap: #floor_normal; normalTextureRepeat: 75 50; ambientOcclusionMap: #floor_ao; ambientOcclusionTextureRepeat: 75 50; metalness: 0.5; roughnessMap: #floor_rough; roughnessTextureRepeat: 75 50"></a-plane>
+
+    <a-plane position="0 10 -4" rotation="90 0 0" width="70" height="40" color="#7BC8A4" shadow="" material="normalMap: #ceiling_normal; roughnessMap: #ceiling_rough; src: #ceiling_diff"></a-plane>
+<a-entity position="0 0 -2.5">
+    <a-box id="backwall" depth=".1" width="60" height="10" position="0 5 -18.81832" color="#000000" shadow=""></a-box>
+    <a-entity position="0 -0.48124 0">
+        <a-plane width="5" height="30" color="#000000" position="-0.79432 6.95938 -18.69696" material="transparent: true; color: #fffff; src: #halloffame-logo" geometry="height: 0.5618; width: 2.6765" scale="10 10 10"></a-plane>
+        <a-gltf-model src="#pistoncup-logo" scale="0.061 0.061 0.061" gltf-model="final/logo/piston-cup3d.glb" position="-0.60728 6.95815 -18.68274" rotation="0 -45 0"></a-gltf-model>
+        <a-gltf-model src="#pistoncup-text" scale="0.115 0.115 0.115" gltf-model="final/logo/piston-cup-text3d.glb" position="-1.74524 6.68424 -18.76221" rotation="0 -45 0"></a-gltf-model>
+        <a-gltf-model src="#halloffame-text" scale="0.053 0.053 0.053" gltf-model="final/logo/hall-of-fame3d.glb" position="-4.78967 5.411 -18.67" rotation="0 -45 0"></a-gltf-model>
+    </a-entity>
+</a-entity>
+    <a-box id="leftwall" depth=".1" width="32" height="10" position="-30 5 -3.767" rotation="0 90 0" color="#000000" shadow="" geometry="width: 36"></a-box>
+
+    <a-box id="rightwall" depth=".1" width="32" height="10" position="30 5 -3.767" rotation="0 90 0" color="#000000" shadow="" geometry="width: 36"></a-box>
+
+    <a-box id="frontleftwall" depth=".1" width="29" height="10" position="-15.60906 5 14" color="#000000" shadow=""></a-box>
+
+    <a-box id="frontrightwall" depth=".1" width="29" height="10" position="15.54537 5 14" color="#000000" shadow=""></a-box>
+
+
+    <a-entity id="king" position="-17.23447 0 8.68667">
+        <a-entity>
+            <a-gltf-model src="#king-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_king.glb"></a-gltf-model>
+            <a-obj-model src="#king-podium-obj" mtl="#king-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 43 0">
+            <a-gltf-model src="#king" position="-0.043 0.458 0.174" scale="0.3 0.3 0.3" shadow="" gltf-model="final/cars/king.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="chick" position="11.86922 0 8.0065">
+        <a-entity>
+            <a-gltf-model src="#chick-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_chick.glb"></a-gltf-model>
+            <a-obj-model src="#chick-podium-obj" mtl="#chick-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 86 0">
+            <a-gltf-model src="#chick" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/chick.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="cal" position="-26.12939 0 1.38309">
+        <a-entity>
+            <a-gltf-model src="#cal-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_cal.glb"></a-gltf-model>
+            <a-obj-model src="#cal-podium-obj" mtl="#cal-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 42 0">
+            <a-gltf-model src="#cal" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/cal.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="mcqueen" position="-1.91475 0 3.6716">
+        <a-entity>
+            <a-gltf-model src="#mcqueen-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_mcqueen.glb"></a-gltf-model>
+            <a-obj-model src="#mcqueen-podium-obj" mtl="#mcqueen-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 95 0">
+            <a-gltf-model src="#mcqueen" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/mcqueen.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+            
+
+    </a-entity>
+
+    <a-entity id="swift" position="21.31744 0 -0.83619">
+                <a-obj-model src="#wall-obj" position="-3.8498 -0.20459 -3.7466" scale="0.18 0.18 0.18" obj-model="obj: "></a-obj-model>
+        <a-entity>
+            <a-gltf-model src="#swift-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_swift.glb"></a-gltf-model>
+            <a-obj-model src="#swift-podium-obj" mtl="#swift-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 19 0">
+            <a-gltf-model src="#swift" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/swift.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="cruz" position="-12.32583 0 -5.38122">
+        <a-entity>
+            <a-gltf-model src="#cruz-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_cruz.glb"></a-gltf-model>
+            <a-obj-model src="#cruz-podium-obj" mtl="#cruz-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
+            <a-gltf-model src="#swiftwall-glb" scale="0.18 0.18 0.18" position="-3.729 0.094 -0.551" gltf-model=""></a-gltf-model>            
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 51 0">
+            <a-gltf-model src="#cruz" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/cruz.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="cartrip" position="7.59524 0 -5.10468">
+        <a-entity>
+            <a-gltf-model src="#cartrip-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_cartrip.glb"></a-gltf-model>
+            <a-obj-model src="#cartrip-podium-obj" mtl="#cartrip-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 17 0">
+            <a-gltf-model src="#cartrip" position="-0.043 0.548 0.174" scale="0.3 0.3 0.3" shadow="" gltf-model="final/cars/cartrip.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="nash" position="-22.61665 0 -11.21524">
+        <a-entity>
+            <a-gltf-model src="#nash-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_nash.glb"></a-gltf-model>
+            <a-obj-model src="#nash-podium-obj" mtl="#nash-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 94 0">
+            <a-gltf-model src="#nash" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/nash.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="hudson" position="-0.60027 0 -13.89261">
+        <a-entity>
+            <a-gltf-model src="#hud-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_hud.glb"></a-gltf-model>
+            <a-obj-model src="#hudson-podium-obj" mtl="#hudson-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 51 0">
+            <a-gltf-model src="#hudson" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/hudson.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-entity id="moon" position="19.84075 0 -13.13687">
+        <a-entity>
+            <a-gltf-model src="#moon-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_moon.glb"></a-gltf-model>
+            <a-obj-model src="#moon-podium-obj" mtl="#moon-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 11 0">
+            <a-gltf-model src="#moon" position="0.094 0.458 0.487" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/moon.glb"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+    </a-entity>
+
+    <a-light type="ambient" color="#333" intensity=".5" light="intensity: 0"></a-light>
+  
+  <a-entity position="0 0 -20"> 
+    <a-entity position="-29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="0 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity>
+  </a-entity><a-entity position="0 0 -10"> 
+    <a-entity position="-29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="0 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity>
+  </a-entity>
+
+  <a-entity> 
+    <a-entity position="-29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="0 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity>
+  </a-entity>
+
+  <a-entity position="0 0 10"> 
+    <a-entity position="-29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="-6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="0 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="6 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="12 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="18 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="24 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity><a-entity position="29.5 9.62862 0">
+        <a-box depth="1" width="1" height="1" color="#3C3F42" geometry="depth: 2; width: 0.25"></a-box>
+        <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.58871 0"></a-light>
+    </a-entity>
+  </a-entity>
+
+    <a-entity class="teleportRay" visible="false"></a-entity><a-entity class="hitEntity" visible="false"><a-entity geometry="primitive: torus; radius: 0.25; radiusTubular: 0.01" rotation="90 0 0" material="depthTest: false; shader: flat; side: double; color: #4d93fd"></a-entity><a-entity position="0 0.15 0" geometry="primitive: cylinder; height: 0.3; openEnded: true; radius: 0.25; segmentsHeight: 1" material="depthTest: false; opacity: 0.5; shader: flat; side: double; transparent: true; color: #4d93fd; src: data:image/png;base64,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"></a-entity><a-entity position="0 0.05 -0.375" rotation="90 180 0" geometry="primitive: prism; depth: 0.05; height: 0.2; width: 0.2" material="depthTest: false; opacity: 0.6; shader: flat; side: double; transparent: true; color: #4d93fd"></a-entity></a-entity><a-entity class="teleportRay" visible="false"></a-entity><a-entity class="hitEntity" visible="false"><a-entity geometry="primitive: torus; radius: 0.25; radiusTubular: 0.01" rotation="90 0 0" material="depthTest: false; shader: flat; side: double; color: #4d93fd"></a-entity><a-entity position="0 0.15 0" geometry="primitive: cylinder; height: 0.3; openEnded: true; radius: 0.25; segmentsHeight: 1" material="depthTest: false; opacity: 0.5; shader: flat; side: double; transparent: true; color: #4d93fd; src: data:image/png;base64,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"></a-entity><a-entity position="0 0.05 -0.375" rotation="90 180 0" geometry="primitive: prism; depth: 0.05; height: 0.2; width: 0.2" material="depthTest: false; opacity: 0.6; shader: flat; side: double; transparent: true; color: #4d93fd"></a-entity></a-entity>
+</a-scene>
+</body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+
+<body>
+    <a-scene background="color: #FAFAFA">
+        <a-assets>
+            <a-asset-item id="swift-podium-obj" src="final/podiums/platformswitf.obj"></a-asset-item>
+            <a-asset-item id="swift-podium-mtl" src="final/podiums/platformswitf.mtl"></a-asset-item>
+            <a-asset-item id="wall-obj" src="final/walls/wall_new1.obj"></a-asset-item>
+            <a-asset-item id="wall-mtl" src="final/walls/wall_new1.mtl"></a-asset-item>
+            <a-asset-item id="swiftwall-glb" src="final/walls/wall_swift.glb"></a-asset-item>
+            <a-asset-item id="mcqueen" src="final/cars/mcqueen.glb"></a-asset-item>
+            <a-asset-item id="pistoncup-logo" src="final/logo/piston-cup3d.glb"></a-asset-item>
+            <a-asset-item id="pistoncup-text" src="final/logo/piston-cup-text3d.glb"></a-asset-item>
+            <a-asset-item id="halloffame-text" src="final/logo/hall-of-fame3d.glb"></a-asset-item>
+            <img id="swift_wall" src="final/textures/wall-swift@3x-80.jpg" alt="">
+            <img id="halloffame-logo" src="final/logo/pistoncuplogobase.png">
+
+        </a-assets>
+    <a-box id="backwall" depth=".1" width="60" height="10" position="0 5 -18.81832" color="#000000" shadow="true"></a-box>
+    <a-entity>
+        <a-plane width="5" height="30" color="#000000" position="-0.79432 6.95938 -18.69696" material="transparent: true; color: #fffff; src: #halloffame-logo" geometry="height: 0.5618; width: 2.6765" scale="10 10 10"></a-plane>
+        <a-gltf-model src="#pistoncup-logo" scale="0.061 0.061 0.061" gltf-model="final/logo/piston-cup3d.glb" position="-0.60728 6.95815 -18.68274" rotation="0 -45 0"></a-gltf-model>
+        <a-gltf-model src="#pistoncup-text" scale="0.115 0.115 0.115" gltf-model="final/logo/piston-cup-text3d.glb" position="-1.74524 6.68424 -18.76221" rotation="0 -45 0"></a-gltf-model>
+        <a-gltf-model src="#halloffame-text" scale="0.053 0.053 0.053" gltf-model="final/logo/hall-of-fame3d.glb" position="-4.78967 5.411 -18.67" rotation="0 -45 0"></a-gltf-model>
+    </a-entity>
+
+        <a-entity>
+            <a-obj-model src="#swift-podium-obj" mtl="#swift-podium-mtl" position="-0.849 -0.161 0.97164"
+                scale="0.18 0.18 0.18" rotation="0 85 0" shadow="true"></a-obj-model>
+            <a-gltf-model src="#swiftwall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551"></a-gltf-model>
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 95 0" >
+            <a-gltf-model src="#mcqueen" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="true"></a-gltf-model>
+            <a-entity position="-2.02152 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            <a-entity position="2.07612 0.5 0">
+                <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
+                <a-light type="point" color="#d5fffc" distance="15" intensity="8" castshadow="true" position="0 -0.13159 0"></a-light>
+            </a-entity>
+            </a-cylinder>
+        </a-entity>
+            <a-light type="ambient" ="color:="" #333"="" intensity=".5" light="intensity: .9"></a-light>
+            <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4" shadow></a-plane>
+    </a-scene>
+
+</body>
+
+</html>
