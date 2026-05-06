@@ -71,7 +71,10 @@
             <!-- hand controls -->
             <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="" blink-controls=""></a-entity>
             <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls=""></a-entity>
-        </a-entity>
+            <a-entity id="player" movement-controls="controls: keyboard, touch; speed: 0.3">
+                <a-entity camera look-controls position="0 1.6 0"></a-entity>
+            </a-entity>
+    </a-entity>
     <a-plane class="floor" position="0 0 -4" rotation="-90 0 0" width="70" height="40" color="#53565b" shadow="" material="repeat: 50 50; src: #floor_diff; normalMap: #floor_normal; normalTextureRepeat: 75 50; ambientOcclusionMap: #floor_ao; ambientOcclusionTextureRepeat: 75 50; metalness: 0.5; roughnessMap: #floor_rough; roughnessTextureRepeat: 75 50"></a-plane>
 
     <a-plane position="0 10 -4" rotation="90 0 0" width="70" height="40" color="#7BC8A4" shadow="" material="normalMap: #ceiling_normal; roughnessMap: #ceiling_rough; src: #ceiling_diff"></a-plane>
@@ -97,7 +100,7 @@
         <a-entity>
             <a-gltf-model src="#king-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_king.glb"></a-gltf-model>
             <a-obj-model src="#king-podium-obj" mtl="#king-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 43 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 43 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#king" position="-0.043 0.458 0.174" scale="0.3 0.3 0.3" shadow="" gltf-model="final/cars/king.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -115,7 +118,7 @@
         <a-entity>
             <a-gltf-model src="#chick-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_chick.glb"></a-gltf-model>
             <a-obj-model src="#chick-podium-obj" mtl="#chick-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 86 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 86 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#chick" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/chick.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -133,7 +136,7 @@
         <a-entity>
             <a-gltf-model src="#cal-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_cal.glb"></a-gltf-model>
             <a-obj-model src="#cal-podium-obj" mtl="#cal-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 42 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 42 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#cal" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/cal.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -151,7 +154,7 @@
         <a-entity>
             <a-gltf-model src="#mcqueen-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_mcqueen.glb"></a-gltf-model>
             <a-obj-model src="#mcqueen-podium-obj" mtl="#mcqueen-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 95 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 95 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#mcqueen" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/mcqueen.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -172,7 +175,7 @@
         <a-entity>
             <a-gltf-model src="#swift-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_swift.glb"></a-gltf-model>
             <a-obj-model src="#swift-podium-obj" mtl="#swift-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 19 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 19 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#swift" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/swift.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -191,7 +194,7 @@
             <a-gltf-model src="#cruz-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_cruz.glb"></a-gltf-model>
             <a-obj-model src="#cruz-podium-obj" mtl="#cruz-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
             <a-gltf-model src="#swiftwall-glb" scale="0.18 0.18 0.18" position="-3.729 0.094 -0.551" gltf-model=""></a-gltf-model>            
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 51 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 51 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#cruz" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/cruz.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -209,7 +212,7 @@
         <a-entity>
             <a-gltf-model src="#cartrip-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_cartrip.glb"></a-gltf-model>
             <a-obj-model src="#cartrip-podium-obj" mtl="#cartrip-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 17 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 17 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#cartrip" position="-0.043 0.548 0.174" scale="0.3 0.3 0.3" shadow="" gltf-model="final/cars/cartrip.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -227,7 +230,7 @@
         <a-entity>
             <a-gltf-model src="#nash-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_nash.glb"></a-gltf-model>
             <a-obj-model src="#nash-podium-obj" mtl="#nash-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 94 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 94 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#nash" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/nash.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -245,7 +248,7 @@
         <a-entity>
             <a-gltf-model src="#hud-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_hud.glb"></a-gltf-model>
             <a-obj-model src="#hudson-podium-obj" mtl="#hudson-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 51 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 51 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#hudson" position="-0.043 0.458 0.174" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/hudson.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
@@ -263,7 +266,7 @@
         <a-entity>
             <a-gltf-model src="#moon-wall-glb" scale="0.18 0.18 0.18" position="-3.309 0.094 -0.551" gltf-model="final/walls/wall_moon.glb"></a-gltf-model>
             <a-obj-model src="#moon-podium-obj" mtl="#moon-podium-mtl" position="-0.66872 -0.16069 0.97164" scale="0.18 0.18 0.18" rotation="0 90 0" shadow=""></a-obj-model>            
-            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 11 0">
+            <a-cylinder height="0.67" radius="2.8" color="#00ff00" position="-0.531 0.3 -0.567" rotation="0 11 0" animation="property: rotation; to: 0 360 0; loop: true; dur: 25000; easing: linear">
             <a-gltf-model src="#moon" position="0.094 0.458 0.487" scale="1.05 1.05 1.05" shadow="" gltf-model="final/cars/moon.glb"></a-gltf-model>
             <a-entity position="-2.02152 0.5 0">
                 <a-box depth="2" width="0.1" height="0.1" color="#3C3F42"></a-box>
