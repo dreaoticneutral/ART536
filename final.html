@@ -65,14 +65,14 @@
         <img id="ceiling_ao" src="final/textures/rubber_tiles_ao_2k.png" alt="">
         <img id="halloffame-logo" src="final/logo/pistoncuplogobase.png">
   </a-assets>
-  <a-entity id="player" position="0 0 0">
+  <a-entity id="player" position="0 1.6 0">
             <!-- camera -->
             <a-entity id="camera" camera="" wasd-controls="" look-controls="" position="1.3110375249704858 0 6.429765360367798"></a-entity>
             <!-- hand controls -->
             <a-entity id="left-hand" raycaster="objects: .floor" oculus-touch-controls="" blink-controls=""></a-entity>
             <a-entity id="right-hand" raycaster="objects: .floor" oculus-touch-controls="hand: right" blink-controls=""></a-entity>
             <a-entity id="player" movement-controls="controls: keyboard, touch; speed: 0.3">
-                <a-entity camera look-controls position="1.3110375249704858 0 6.429765360367798"></a-entity>
+                <a-entity camera look-controls position="0 1.6 0"></a-entity>
             </a-entity>
     </a-entity>
     <a-plane class="floor" position="0 0 -4" rotation="-90 0 0" width="70" height="40" color="#53565b" shadow="" material="repeat: 50 50; src: #floor_diff; normalMap: #floor_normal; normalTextureRepeat: 75 50; ambientOcclusionMap: #floor_ao; ambientOcclusionTextureRepeat: 75 50; metalness: 0.5; roughnessMap: #floor_rough; roughnessTextureRepeat: 75 50"></a-plane>
